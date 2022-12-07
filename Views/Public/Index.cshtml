@@ -1,0 +1,32 @@
+@model CategoryLinksManager;
+
+<div class="row my-3">
+            <div class="col">
+                <h2>_launchPad.</h2>
+            </div>
+</div>
+
+<div class="row">
+    @foreach (var item in Model.categories) {
+        <div class="col">
+            <h4>@item.categoryName</h4>
+            @foreach (var link in Model.categoryLinks) {
+                if(link.categoryId == item.categoryId){@link.pinned
+                     <div class="row @(@link.pinned == "true" ? "pinned" : "")">
+                        <div class="col">
+                            <span><img src="https://www.google.com/s2/favicons?domain_url=@link.href" alt="logo"/></span>
+                            <a href="@link.href" target="_blank">@link.link</a>
+                        </div>
+                     </div>  
+                }
+            }
+           
+        </div>        
+    }
+</div>
+
+<div class="row">
+    <div class="col text-info">
+        @ViewData["feedback"]
+    </div>
+</div>

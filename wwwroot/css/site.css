@@ -1,0 +1,20 @@
+﻿body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+  max-width: 280px;
+}
+h2, h4{
+  color: darkslategrey !important; 
+}
+.pinned:nth-last-child(1) {
+  border-bottom: 3px dotted;
+}
+/* .pinned{
+  border-bottom: 3px dotted;
+} */

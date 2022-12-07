@@ -1,0 +1,64 @@
+@model Customer;
+
+<div class="row my-2">
+    <div class="col">
+        <h4>Update Customer</h4>
+        <div style="margin-bottom:10px">Select customer to update:</div>
+
+        <form asp-controller="Home" asp-action="UpdateSelect">
+            <div class="form-group">
+                <select id="lstCustomers" asp-items="ViewBag.selectList" asp-for="@Model.customerID" class="btn btn-secondary form-control" onchange="this.form.submit();"></select>
+            </div>
+        </form>
+        
+        <div style="margin-bottom:10px">Update customer information:</div>        
+        <form asp-controller="Home" asp-action="UpdateSubmit">
+            <input type="hidden" asp-for="@Model.customerID" value="@Model.customerID" />
+@Model.firstName
+            <div class="form-group">
+                <label asp-for="@Model.firstName"></label>
+                <input type="text" asp-for="@Model.firstName" class="form-control" maxlength="50" />
+                <span asp-validation-for="@Model.firstName" class="text-danger" />
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="@Model.lastName"></label>
+                <input type="text" asp-for="@Model.lastName" class="form-control" maxlength="50" />
+                <span asp-validation-for="@Model.lastName" class="text-danger" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.address"></label>
+                <input type="text" asp-for="@Model.address" class="form-control" maxlength="100" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.city"></label>
+                <input type="text" asp-for="@Model.city" class="form-control" maxlength="50" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.province"></label>
+                <input type="text" asp-for="@Model.province" class="form-control" maxlength="50" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.postal"></label>
+                <input type="text" asp-for="@Model.postal" class="form-control" maxlength="7" />
+                <span asp-validation-for="@Model.postal" class="text-danger" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.phone"></label>
+                <input type="text" asp-for="@Model.phone" class="form-control" maxlength="15" />
+                <span asp-validation-for="@Model.phone" class="text-danger" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-warning" Text="Add" />
+                <a asp-controller="Home" asp-action="Index"><input type="button" class="btn btn-warning" value="Cancel" /></a>
+            </div>
+        </form>
+
+    </div>
+</div>
