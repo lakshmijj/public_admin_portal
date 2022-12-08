@@ -1,0 +1,44 @@
+﻿@model Link;
+
+<div class="row my-3">
+            <div class="col">
+                <h2>_launchPad. <small>Administration</small></h2>
+            </div>
+</div>
+<div class="row my-2">
+    <div class="col">
+        <h4 class="text-warning">Add Link</h4>
+        <div style="margin-bottom:10px">Enter the new data link below:</div>
+        
+        <form method="post">
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" value="@ViewBag.categoryName" class="form-control" disabled="true"/>
+            </div>
+            <input type="hidden" asp-for="@Model.categoryId" value="@Model.categoryId" class="form-control"/>
+            <div class="form-group">
+                <label asp-for="@Model.link">Label</label>
+                <input type="text" asp-for="@Model.link" value="@Model.link" class="form-control" maxlength="100" />
+                <span asp-validation-for="@Model.link" class="text-danger" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.href">href</label>
+                <input type="text" asp-for="@Model.href" value="@Model.href" class="form-control" maxlength="100" />
+                <span asp-validation-for="@Model.href" class="text-danger" />
+            </div>
+            <label asp-for="@Model.pinned">Pinned</label>
+            <div class="form-group">                
+                <input type="checkbox" asp-for="@Model.pinned" value="true"/>
+                <label>Pin link to top</label>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <input type="submit" asp-controller="Admin" asp-action="AddSubmit" class="btn btn-warning" value="Add" />
+                <a asp-controller="Admin" asp-action="Index"><input type="button" class="btn btn-warning" value="Cancel" /></a>
+            </div>
+        </form>
+
+    </div>
+</div>

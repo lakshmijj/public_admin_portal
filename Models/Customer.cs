@@ -35,6 +35,8 @@ namespace publicAdminPortal.Models {
 
           private DbSet<Customer> tblCustomer{get;set;}
 
+          
+
         // -------------------------------------------------------- public methods
         
     }

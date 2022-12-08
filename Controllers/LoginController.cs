@@ -18,7 +18,7 @@ namespace publicAdminPortal.Controllers {
             webLogin.password = myPassword;
 
             if(webLogin.unlock()){
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index","Admin");
             }
             else{
                 ViewData["feedback"] = "Incorrect login. Please try again...";

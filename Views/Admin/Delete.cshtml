@@ -1,0 +1,27 @@
+@model Link;
+
+<div class="row my-3">
+            <div class="col">
+                <h2>_launchPad. <small>Administration</small></h2>
+            </div>
+</div>
+
+<div class="row" style="margin-bottom:20px;">
+    <div class="col-sm-12">
+        <h4>Delete Link.</h4>
+        
+        <form method="post">
+
+            <p>Are you sure you want to delete the following link?</p>
+
+            <span><img src="https://www.google.com/s2/favicons?domain_url=@Model.href" alt="logo"/></span>
+            <span>@Model.link  | @Model.href</span> 
+            <input type="hidden" name="linkId" value="@Model.linkId"/>
+            <div class="form-group mt-4">
+                <input type="submit" asp-controller="Admin" asp-action="DeleteSubmit" class="btn btn-warning" value="Delete" />
+                <input type="submit" asp-controller="Admin" asp-action="Index" class="btn btn-warning" value="Cancel" />
+            </div>
+        </form>
+
+    </div>
+</div>

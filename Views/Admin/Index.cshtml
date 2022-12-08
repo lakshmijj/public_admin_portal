@@ -1,0 +1,70 @@
+﻿@model CategoryLinksManager;
+
+<div class="row my-3">
+            <div class="col">
+                <h2>_launchPad. <small>Administration</small></h2>
+            </div>
+</div>
+
+<div class="row">
+ 
+    @foreach (var item in Model.categories) {
+        <div class="col-md-3 col-sm col-lg-3">
+            <div class="row">
+                
+                @* <div class="col mr-2"><h4>@item.categoryName</h4></div>
+                <div class="col-2 mr-2"><button type="submit" class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="Add">
+                     <i class="fa-solid fa-plus"></i>                    
+                </button> </div>
+                <div class="col-2 mr-2" align="left"><button type="submit" class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="Update">
+                   <i class="fa-solid fa-pen"></i>
+                </button></div> *@
+                <div class="col mt-2">
+                    <form method="post">
+                    <input type="hidden" name="categoryId" value="@item.categoryId"/>
+                    <input type="hidden" name="categoryName" value="@item.categoryName"/>
+                    <strong>@item.categoryName</strong>
+                    <button type="submit" class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="Add">
+                       <i class="fa-solid fa-plus"></i>                    
+                    </button>
+                    <button type="submit" class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="UpdateCategory">
+                       <i class="fa-solid fa-pen"></i>
+                    </button>
+                    </form>
+                </div>                
+            </div>            
+           
+            @foreach (var link in Model.categoryLinks) {
+                if(link.categoryId == item.categoryId){
+                     <div class="row mt-2 @(@link.pinned == "true" ? "pinned" : "")">
+                        <div class="col">
+                            <form method="post">
+                            <input type="hidden" name="linkId" value="@link.linkId"/>
+                            <input type="hidden" name="categoryName" value="@item.categoryName"/>
+                            <input type="hidden" name="link" value="@link.link"/>
+                            <input type="hidden" name="href" value="@link.href"/>
+                            <button type="submit" class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="Update">
+                            <i class="fa-solid fa-pen"></i>
+                            </button> 
+                            <button type="submit" class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="Delete">
+                            <i class="fa-solid fa-trash"></i>
+                            </button>
+                            <span><img src="https://www.google.com/s2/favicons?domain_url=@link.href" alt="logo"/></span>
+                            <a href="@link.href" target="_blank">@link.link</a>
+                            </form>
+                        </div>
+                     </div>  
+                }
+            }
+           
+        </div>        
+    }
+ 
+</div>
+<div class="row">
+    <div class="col text-info">
+        @ViewData["feedback"]
+    </div>
+</div>
+
+

@@ -15,20 +15,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ljaya\OneDrive\Desktop\nscc\INET2005WebApp\public_admin_portal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Home/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGQuY3NodG1s
+[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Admin/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Home/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Admin/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Home/Update.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGUuY3NodG1s
+[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Admin/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Admin/UpdateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ljaya/OneDrive/Desktop/nscc/INET2005WebApp/public_admin_portal/Views/Login/Index.cshtml]

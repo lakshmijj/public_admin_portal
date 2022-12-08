@@ -31,16 +31,17 @@ CREATE TABLE `tblCategory` (
   `categoryName` varchar(100) NOT NULL
 );
 
+
+
 CREATE TABLE `tblLink` (
   `linkId` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `link` varchar(100) NOT NULL,
-  `href` varchar(100) NOT NULL,
+  `href` varchar(200) NOT NULL,
   `categoryId` int NOT NULL,
-  `pinned` binary NOT NULL,
-  FOREIGN KEY (`categoryId`) REFERENCES `tblCategory` (`categoryId`)
+  `pinned` varchar(6) NOT NULL
 );
-ALTER TABLE `tblLink`
-CHANGE `pinned` `pinned` varchar(6) NOT NULL DEFAULT 'false' AFTER `categoryId`;
+
+
 
 CREATE TABLE `tblLogin` (
   `username` varchar(20) NOT NULL,

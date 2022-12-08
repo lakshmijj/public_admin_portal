@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace publicAdminPortal.Models {
 
@@ -14,19 +15,22 @@ namespace publicAdminPortal.Models {
         public int linkId { get; set; }
         [Required]
         [MaxLength(100)]
-        [Display(Name="Link Name")]
+        [Display(Name="Label Name")]
         public string link {get; set;}
         [Required]
         [MaxLength(100)]
         [Display(Name="Link")]
         public string href {get; set;}
         public int categoryId {get; set;}
-        public int pinned {get; set;}      
-        
+        public string pinned {get; set;}             
 
-          private DbSet<Link> tblLink{get;set;}
+        // public DbSet<Link> tblLink{get;set;}
 
-        // -------------------------------------------------------- public methods
+       
+         // -------------------------------------------------- get/sets
+          
+
+         // -------------------------------------------------------- public methods
         
     }
 }
