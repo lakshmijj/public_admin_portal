@@ -14,11 +14,12 @@ namespace publicAdminPortal.Models {
         [Key]
         public int linkId { get; set; }
         [Required]
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage ="Maximum 100 characters are allowed")]
         [Display(Name="Label Name")]
         public string link {get; set;}
         [Required]
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage ="Maximum 100 characters are allowed")]
+        [Url(ErrorMessage="Please enter a valid Url")]
         [Display(Name="Link")]
         public string href {get; set;}
         public int categoryId {get; set;}

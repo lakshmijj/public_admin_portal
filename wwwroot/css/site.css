@@ -12,8 +12,32 @@ textarea {
 h2, h4{
   color: darkslategrey !important; 
 }
-.pinned:nth-last-child(1) {
+/* .category_1 .pinned:last-child(1) {
   border-bottom: 3px dotted;
+} 
+.category_2 .pinned:last-child(1) {
+  border-bottom: 3px dotted;
+} 
+.category_3 .pinned:last-child(1) {
+  border-bottom: 3px dotted;
+} 
+.category_4 .pinned:last-child(1) {
+  border-bottom: 3px dotted;
+}  */
+
+.btn-group-sm>.btn, .btn-sm {
+  padding: 0.15rem 0.25rem !important;
+  font-size: .75rem !important;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+a{
+  color: black;
+  font-size: 15px;
+}
+.bordered{
+  border-bottom: 2px dashed #bec3c9;
+  padding-bottom: 12px;
 }
 /* .pinned{
   border-bottom: 3px dotted;

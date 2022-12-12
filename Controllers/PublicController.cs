@@ -9,15 +9,17 @@ namespace publicAdminPortal.Controllers {
     public class PublicController : Controller {
      
 
+        //Landing for the public end
+        /*
+        * CategoryLinksManager is the model which extracts data from categories and corresponding links
+        */
         public IActionResult Index() {         
             CategoryLinksManager categoryLinksManager = new CategoryLinksManager();
             categoryLinksManager.getLinksByCategory();
+            //feedback is used to show empty message
             string feedback = "";            
             if(categoryLinksManager.categories.Count == 0){
                 ViewData["feedback"] = "There is no data...";
-            }else{
-                Console.WriteLine(">>>>>>>>>>>>> categories: "+categoryLinksManager.categories.Count);
-                Console.WriteLine(">>>>>>>>>>>>> categoryLinks: "+categoryLinksManager.categoryLinks.Count);
             }
             return View(categoryLinksManager);            
         }

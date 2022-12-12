@@ -1,9 +1,18 @@
 @model Category;
 
 <div class="row my-3">
-            <div class="col">
-                <h2>_launchPad. <small>Administration</small></h2>
+            <div class="col-4">
+                <h2>_launchPad. <small>Administration</small> </h2>
             </div>
+             <div class="col-3">
+                <form method="post" id="frmLogout" asp-controller="Admin" asp-action="Logout"><button type="submit" class="btn btn-light">Logout</button></form>
+            </div>
+</div>
+<div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none">
+  <strong>WARNING : Session is about to expire in 2 mins!  Please refresh the page before the session expires</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 <div class="row my-2">
     <div class="col">
@@ -13,11 +22,11 @@
         <form method="post">
             <div class="form-group">
                 <label>Category</label>
-                <input type="text" asp-for="@Model.categoryName" value="@Model.categoryName" class="form-control"/>
+                <input type="text" asp-for="@Model.categoryName" value="@Model.categoryName" class="form-control" maxlength="100"/>
                 <span asp-validation-for="@Model.categoryName" class="text-danger" />
             </div>
             <input type="hidden" asp-for="@Model.categoryId" value="@Model.categoryId" class="form-control"/>
-            <div asp-validation-summary="All" class="text-danger"></div>
+            @* <div asp-validation-summary="All" class="text-danger"></div> *@
 
             <div class="form-group">
                 <input type="submit" asp-controller="Admin" asp-action="UpdateCategorySubmit" class="btn btn-warning" value="Edit" />

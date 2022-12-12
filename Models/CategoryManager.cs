@@ -22,7 +22,16 @@ namespace publicAdminPortal.Models {
             optionsBuilder.UseMySql(Connection.CONNECTION_STRING, new MySqlServerVersion(new Version(8,0,11)));
         }     
        
-       
+
+       //public method
+
+       /*
+       Fetch Categories as select list to populate dropdown.    
+       */
+       public SelectList getSelectList(){
+            List<Category> listData = tblCategory.OrderBy(c=>c.categoryName).ToList();
+            return new SelectList(listData, "categoryId", "categoryName");
+        }
     }
 
 }

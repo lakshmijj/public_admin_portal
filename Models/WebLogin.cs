@@ -12,7 +12,7 @@ namespace publicAdminPortal.Models {
 		private string connectionString;
 		private MySqlCommand dbCommand;
 		private MySqlDataReader dbReader;
-		private HttpContext context;
+		public HttpContext context;
 
 		private string _username;
 		private string _password;

@@ -13,7 +13,7 @@ namespace publicAdminPortal.Models {
         [Key]
         public int categoryId { get; set; }
         [Required]
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage ="Maximum 100 characters are allowed")]
         [Display(Name="Category Name")]
         public string categoryName {get; set;}        
 

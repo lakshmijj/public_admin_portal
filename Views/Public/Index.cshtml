@@ -7,22 +7,30 @@
 </div>
 
 <div class="row">
+    @{var i= 1;}
     @foreach (var item in Model.categories) {
-        <div class="col">
-            <h4>@item.categoryName</h4>
+        <div class="col-md-3 col-sm col-lg-3 category_@i">
+            <div class="row mb-4"> 
+                <div class="col mt-2">                   
+                    <strong style="overflow-wrap: break-word">@item.categoryName</strong>                   
+                </div>                
+            </div>   
             @foreach (var link in Model.categoryLinks) {
                 if(link.categoryId == item.categoryId){
-                     <div class="row @(@link.pinned == "true" ? "pinned" : "")">
-                        <div class="col">
+                     <div class="row mt-2 mr-4">
+                        <div class="col mr-2 @(@link.pinned == "true" ? "pinned" : "")">
                             <span><img src="https://www.google.com/s2/favicons?domain_url=@link.href" alt="logo"/></span>
-                            <a href="@link.href" target="_blank">@link.link</a>
+                            <a href="@link.href" target="_blank"><span style="overflow-wrap: break-word">@link.link</span></a>
                         </div>
                      </div>  
+                    
                 }
             }
            
-        </div>        
+        </div>  
+        i++;       
     }
+    
 </div>
 
 <div class="row">
@@ -30,3 +38,4 @@
         @ViewData["feedback"]
     </div>
 </div>
+

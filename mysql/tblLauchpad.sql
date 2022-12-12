@@ -54,6 +54,16 @@ CREATE TABLE `tblLogin` (
 INSERT INTO `tblLogin` (`username`, `password`, `salt`)
 VALUES ('admin', '2tlSd6XfoK+WNPL1zqCxuBsG/4GH4PScLEdRCw3i/mk=', 'Sw+nPGWtmw5WdAghX6+1ug==');
 
+INSERT INTO `tblCategory` (`categoryName`)
+VALUES ('Technology');
+INSERT INTO `tblCategory` (`categoryName`)
+VALUES ('Data');
+INSERT INTO `tblCategory` (`categoryName`)
+VALUES ('Data');
+INSERT INTO `tblCategory` (`categoryName`)
+VALUES ('Data');
+
+
 --
 -- Indexes for dumped tables
 --

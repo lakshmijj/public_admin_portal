@@ -85,7 +85,8 @@ namespace publicAdminPortal.Models {
             var categories = tblCategory;         
             var links = tblLink;
             categoryLinks = (from l in links
-                    join c in categories on l.categoryId equals c.categoryId 
+                    join c in categories on l.categoryId equals c.categoryId     
+                    orderby c.categoryId, l.pinned descending, l.link
                     select new Result{
                     linkId = l.linkId,
                     link = l.link,

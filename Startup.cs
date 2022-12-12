@@ -24,12 +24,14 @@ namespace publicAdminPortal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<publicAdminPortal.Models.CustomerManager>();
+            services.AddDbContext<publicAdminPortal.Models.CategoryLinksManager>();
+            services.AddDbContext<publicAdminPortal.Models.CategoryManager>();
+            services.AddDbContext<publicAdminPortal.Models.LinkManager>();
              // ---------------------------- added to enable session variables
             services.AddDistributedMemoryCache();
             services.AddSession(options => {
                 // Set a short timeout for easy testing.
-                options.IdleTimeout = TimeSpan.FromSeconds(1200);
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
                 options.Cookie.HttpOnly = true;
             });
             // --------------------------------------------------------------

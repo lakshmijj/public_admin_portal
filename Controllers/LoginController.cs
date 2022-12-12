@@ -7,16 +7,21 @@ namespace publicAdminPortal.Controllers {
 
     public class LoginController : Controller {
 
+        //Landing action of Login
         public IActionResult Index() {
+            //For security, anytime the user hit login page, clear the session
+            HttpContext.Session.Clear();  
             return View();
         }
 
-        
+        /*
+        * Submit the login page 
+        */
         public IActionResult Submit(string myUsername, string myPassword) {
             WebLogin webLogin = new WebLogin(Connection.CONNECTION_STRING, HttpContext);
             webLogin.useename = myUsername;
             webLogin.password = myPassword;
-
+            //if the user exists, redirect to Admin
             if(webLogin.unlock()){
                 return RedirectToAction("Index","Admin");
             }
